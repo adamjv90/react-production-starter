@@ -344,7 +344,7 @@ const renderFullPage = (data, initialState, assets) => {
               p.async = true;
               p.src = '//o.aolcdn.com/ads/adsWrapper.js';
               p.onload = p.onreadystatechange = function () {
-              window.adSetAdURL('${ isDeveloping ? '/_uac/adpage.html' : 'http://www.stylemepretty.com/_uac/adpage.html' }');
+              window.adSetAdURL('/_uac/adpage.html');
               window.adSetMOAT("1");
               };
               f.parentNode.insertBefore(p, f);
