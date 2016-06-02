@@ -1,10 +1,12 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { callAPIMiddleware } from './middleware/callAPIMiddleware';
+import { responsiveStoreEnhancer } from 'redux-responsive';
 import createReducer from './createReducer';
 
 export function configureStore(initialState = {}) {
   let store = createStore(createReducer(), initialState, compose(
+    responsiveStoreEnhancer,
     applyMiddleware(
       thunk,
       callAPIMiddleware
